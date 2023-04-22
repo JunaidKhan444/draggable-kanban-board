@@ -16,7 +16,7 @@ const App = () => {
                 Welcome to Draggable Kanban
             </Heading>
             <Container maxWidth="contaianer.lg" px={4} py={10}>
-                <SimpleGrid column={{ base: 1, md: 4 }} spacing={{ base: 16, md: 4 }}>
+                <SimpleGrid columns={{ base: 1, md: 4 }} spacing={{ base: 16, md: 4 }}>
                     <Column column={ColumnType.TO_DO} />
                     <Column column={ColumnType.IN_PROGRESS} />
                     <Column column={ColumnType.BLOCKED} />
