@@ -5,10 +5,21 @@ import { DeleteIcon } from "@chakra-ui/icons";
 
 interface TaskProps {
     index: number;
-    task: TaskModel
+    task: TaskModel;
+    onUpdate: (id: TaskModel["id"], updateTask: TaskModel) => void;
+    onDelete: (id: TaskModel["id"]) => void;
 };
 
-const Task: React.FC<TaskProps> = ({ index, task }) => {
+const Task: React.FC<TaskProps> = ({ index, task, onUpdate: handeleUpdate, onDelete: handleDelete }) => {
+
+    const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const newTitle = e.target.value;
+        handeleUpdate(task.id, { ...task, title: newTitle });
+    };
+
+    const handleDeleteClick = () => {
+        handleDelete(task.id);
+    };
     return (
         <Box
             as="div"
@@ -38,6 +49,7 @@ const Task: React.FC<TaskProps> = ({ index, task }) => {
                 _groupHover={{
                     opacity: 1
                 }}
+                onClick={handleDeleteClick}
             />
             <Textarea
                 value={task.title}
@@ -50,6 +62,7 @@ const Task: React.FC<TaskProps> = ({ index, task }) => {
                 maxH={200}
                 focusBorderColor="none"
                 color="gray.700"
+                onChange={handleTitleChange}
             />
 
 
