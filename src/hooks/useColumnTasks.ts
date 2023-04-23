@@ -21,7 +21,7 @@ const useColumnTasks = (column: ColumnType) => {
 
             const newColumnTask: TaskModel = {
                 id: uuidv4(),
-                title: `New $(column) task`,
+                title: "New " + column + " task",
                 color: pickChakraRandomColor(".300"),
                 column,
             };
@@ -32,9 +32,44 @@ const useColumnTasks = (column: ColumnType) => {
         });
     }, [column, setTasks]);
 
+    const updateTask = React.useCallback(
+        (id: TaskModel["id"], updatedTask: Omit<Partial<TaskModel>, "id">) => {
+            console.log(`Updating Task ${id} with ${JSON.stringify(updateTask)}`);
+
+            setTasks((allTasks) => {
+                const columnTasks = allTasks[column];
+
+                return {
+                    ...allTasks,
+                    [column]: columnTasks.map((task) =>
+                        task.id === id ? { ...task, ...updatedTask } : task,
+                    ),
+                };
+            });
+        },
+        [column, setTasks],
+    );
+
+    const deleteTask = React.useCallback(
+        (id: TaskModel["id"]) => {
+            console.log(`Remove task ${id}..`);
+
+            setTasks((allTasks) => {
+                const columnTasks = allTasks[column];
+                return {
+                    ...allTasks,
+                    [column]: columnTasks.filter((task) => task.id !== id),
+                };
+            });
+        },
+        [column, setTasks],
+    );
+
     return {
         tasks: tasks[column],
         addEmptyTask,
+        updateTask,
+        deleteTask,
     };
 }
 
