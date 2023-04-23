@@ -1,4 +1,4 @@
-import React from "react";
+
 import { AddIcon } from "@chakra-ui/icons";
 import {
     Badge,
@@ -9,8 +9,8 @@ import {
     useColorModeValue
 } from "@chakra-ui/react";
 import { ColumnType } from "../utils/enums";
-import { TaskModel } from "../utils/models"
 import Task from "./Task";
+import useColumnTasks from "../hooks/useColumnTasks";
 
 const ColumnColorScheme: Record<ColumnType, string> = {
     Todo: "gray",
@@ -19,29 +19,31 @@ const ColumnColorScheme: Record<ColumnType, string> = {
     Completed: "green"
 };
 
-const mockTest: TaskModel[] = [
-    {
-        id: "1",
-        title: "Task 1",
-        column: ColumnType.TO_DO,
-        color: "red.300"
-    },
-    {
-        id: "2",
-        title: "Task 2",
-        column: ColumnType.TO_DO,
-        color: "blue.300"
-    },
-    {
-        id: "3",
-        title: "Task 3",
-        column: ColumnType.TO_DO,
-        color: "green.300"
-    },
-];
+// const mockTest: TaskModel[] = [
+//     {
+//         id: "1",
+//         title: "Task 1",
+//         column: ColumnType.TO_DO,
+//         color: "red.300"
+//     },
+//     {
+//         id: "2",
+//         title: "Task 2",
+//         column: ColumnType.TO_DO,
+//         color: "blue.300"
+//     },
+//     {
+//         id: "3",
+//         title: "Task 3",
+//         column: ColumnType.TO_DO,
+//         color: "green.300"
+//     },
+// ];
 
 const Column = ({ column }: { column: ColumnType }) => {
-    const ColumnTasks = mockTest.map((task, index) => (
+    const { tasks, addEmptyTask } = useColumnTasks(column);
+
+    const ColumnTasks = tasks.map((task, index) => (
         <Task key={task.id} task={task} index={index} />
     ));
     return (
@@ -67,6 +69,7 @@ const Column = ({ column }: { column: ColumnType }) => {
                 colorScheme="black"
                 aria-label="add-task"
                 icon={<AddIcon />}
+                onClick={addEmptyTask}
             />
             <Stack
                 direction={{ base: "row", md: "column" }}

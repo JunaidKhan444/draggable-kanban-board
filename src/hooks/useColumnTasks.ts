@@ -1,12 +1,13 @@
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ColumnType } from "../utils/enums";
+import { pickChakraRandomColor } from "../utils/helpers";
 import { TaskModel } from "../utils/models";
 import useTaskCollection from "./useTaskCollection";
 
 const MAX_TASK_PER_COLUMN = 100;
 
-const useColumnTask = (column: ColumnType) => {
+const useColumnTasks = (column: ColumnType) => {
     const [tasks, setTasks] = useTaskCollection();
 
     const addEmptyTask = React.useCallback(() => {
@@ -30,6 +31,11 @@ const useColumnTask = (column: ColumnType) => {
             };
         });
     }, [column, setTasks]);
+
+    return {
+        tasks: tasks[column],
+        addEmptyTask,
+    };
 }
 
-export default useColumnTask
+export default useColumnTasks;
