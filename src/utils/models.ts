@@ -1,3 +1,10 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
+ 
 import { ColumnType } from "./enums";
 
 export interface TaskModel {
@@ -6,3 +13,4 @@ export interface TaskModel {
     column: ColumnType;
     color: string;
 }
+

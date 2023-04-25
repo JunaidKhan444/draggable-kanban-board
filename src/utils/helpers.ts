@@ -1,3 +1,10 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
+ 
 const colors = [
     "red",
     "orange",
@@ -13,3 +20,4 @@ export function pickChakraRandomColor(variant = "") {
     const color = colors[Math.floor(Math.random() * colors.length)];
     return color + variant;
 }
+
