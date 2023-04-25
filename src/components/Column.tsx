@@ -1,3 +1,9 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
 
 import { AddIcon } from "@chakra-ui/icons";
 import {

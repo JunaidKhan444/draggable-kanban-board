@@ -1,3 +1,10 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
+ 
 import React from "react";
 import { Box, IconButton, Textarea } from "@chakra-ui/react";
 import { TaskModel } from "../utils/models";
