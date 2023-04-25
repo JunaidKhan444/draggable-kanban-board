@@ -1,3 +1,10 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
+ 
 import { Container, Heading, SimpleGrid } from "@chakra-ui/react";
 import Column from "./components/Column";
 import { ColumnType } from "./utils/enums";
