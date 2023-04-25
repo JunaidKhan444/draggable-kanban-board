@@ -1,3 +1,10 @@
+/**
+ * Draggable-Kanban-Board
+ *
+ * @author   Junaid Khan
+ *
+ */
+ 
 import { useLocalStorage } from "usehooks-ts";
 import { v4 as uuidv4 } from "uuid";
 import { ColumnType } from "../utils/enums";
