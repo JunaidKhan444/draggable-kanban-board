@@ -4,7 +4,7 @@
  * @author   Junaid Khan
  *
  */
- 
+
 import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { ColumnType } from "../utils/enums";
@@ -72,11 +72,22 @@ const useColumnTasks = (column: ColumnType) => {
         [column, setTasks],
     );
 
+    const dropTaskFrom = React.useCallback(
+        (from: ColumnType, id: TaskModel["id"]) => {
+            setTasks((allTasks) => {
+                const fromColumnTasks = allTasks[from];
+                const toColumnTasks = allTasks[column];
+            });
+        },
+        [column, setTasks],
+    );
+
     return {
         tasks: tasks[column],
         addEmptyTask,
         updateTask,
         deleteTask,
+        dropTaskFrom,
     };
 }
 
