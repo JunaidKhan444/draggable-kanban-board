@@ -4,7 +4,7 @@
  * @author   Junaid Khan
  *
  */
- 
+
 import { ColumnType } from "./enums";
 
 export interface TaskModel {
@@ -12,5 +12,10 @@ export interface TaskModel {
     title: string;
     column: ColumnType;
     color: string;
-}
+};
 
+export interface DragItem {
+    index: number;
+    id: TaskModel["id"];
+    from: ColumnType;
+};
