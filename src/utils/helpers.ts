@@ -14,6 +14,7 @@ const colors = [
     "cyan",
     "purple",
     "pink",
+    "FC7300"
 ];
 
 export function pickChakraRandomColor(variant = "") {
