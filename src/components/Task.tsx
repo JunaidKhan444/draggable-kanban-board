@@ -17,11 +17,12 @@ interface TaskProps {
     task: TaskModel;
     onUpdate: (id: TaskModel["id"], updateTask: TaskModel) => void;
     onDelete: (id: TaskModel["id"]) => void;
+    onDropHover: (i: number, j: number) => void;
 };
 
-const Task: React.FC<TaskProps> = ({ index, task, onUpdate: handeleUpdate, onDelete: handleDelete }) => {
+const Task: React.FC<TaskProps> = ({ index, task, onUpdate: handeleUpdate, onDelete: handleDelete, onDropHover: handleDropHover, }) => {
 
-    const { ref, isDragging } = useTaskDragAndDrop<HTMLDivElement>({ task, index, });
+    const { ref, isDragging } = useTaskDragAndDrop<HTMLDivElement>({ task, index, handleDropHover });
     const handleTitleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         const newTitle = e.target.value;
         handeleUpdate(task.id, { ...task, title: newTitle });
