@@ -26,27 +26,6 @@ const ColumnColorScheme: Record<ColumnType, string> = {
     Completed: "green"
 };
 
-// const mockTest: TaskModel[] = [
-//     {
-//         id: "1",
-//         title: "Task 1",
-//         column: ColumnType.TO_DO,
-//         color: "red.300"
-//     },
-//     {
-//         id: "2",
-//         title: "Task 2",
-//         column: ColumnType.TO_DO,
-//         color: "blue.300"
-//     },
-//     {
-//         id: "3",
-//         title: "Task 3",
-//         column: ColumnType.TO_DO,
-//         color: "green.300"
-//     },
-// ];
-
 const Column = ({ column }: { column: ColumnType }) => {
     const { tasks, addEmptyTask, updateTask, deleteTask, dropTaskFrom, swaptasks } = useColumnTasks(column);
 

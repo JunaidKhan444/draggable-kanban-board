@@ -37,7 +37,7 @@ const App = () => {
                 </DndProvider>
             </Container>
         </>
-    )
-}
+    );
+};
 
 export default App;
