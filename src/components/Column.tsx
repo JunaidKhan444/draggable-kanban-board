@@ -82,6 +82,6 @@ const Column = ({ column }: { column: ColumnType }) => {
             </Stack>
         </Box>
     );
-}
+};
 
 export default Column;

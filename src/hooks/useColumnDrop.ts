@@ -29,7 +29,6 @@ const useColumnDrop = (
         isOver,
         dropRef
     };
-
 }
 
 export default useColumnDrop;

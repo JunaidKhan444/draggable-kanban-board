@@ -19,3 +19,4 @@ export interface DragItem {
     id: TaskModel["id"];
     from: ColumnType;
 };
+

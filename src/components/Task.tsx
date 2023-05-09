@@ -83,6 +83,6 @@ const Task: React.FC<TaskProps> = ({ index, task, onUpdate: handeleUpdate, onDel
 
         </Box>
     );
-}
+};
 
 export default Task;
