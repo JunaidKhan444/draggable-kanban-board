@@ -32,7 +32,7 @@ To set up the Kanban Board locally, follow these steps:
 Contributions are welcome! If you'd like to contribute to the Kanban Board, please follow these steps:
 
 1. Fork the repository.
-2. Create a new branch: git checkout -b my-feature.
-3. Make your changes and commit them: git commit -am 'Add new feature'.
-4. Push the changes to your fork: git push origin my-feature.
+2. Create a new branch : `git checkout -b my-feature`.
+3. Make your changes and commit them : `git commit -am 'Add new feature'`.
+4. Push the changes to your fork : `git push origin my-feature`.
 5. Submit a pull request detailing your change.
