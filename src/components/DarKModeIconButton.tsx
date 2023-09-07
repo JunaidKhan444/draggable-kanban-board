@@ -16,8 +16,8 @@ function DarKModeIconButton({ ...rest }: React.ComponentPropsWithoutRef<typeof I
         <IconButton
             onClick={toggleColorMode}
             icon={isDark ? <MoonIcon /> : <SunIcon />}
-            aria-label={"dark-mode-togle"}
             {...rest}
+            aria-label={"dark-mode-togle"}
         />
     );
 }
