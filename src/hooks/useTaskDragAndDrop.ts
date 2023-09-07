@@ -44,6 +44,7 @@ const useTaskDragAndDrop = <T extends HTMLElement>({ task, index, handleDropHove
             const isDraggedItemAboveHovered = draggedItemIndex < hoveredItemIndex;
             const isDraggedItemBelowHovered = !isDraggedItemAboveHovered;
 
+            // @ts-ignore
             const { x: mouseX, y: mouseY } = monitor.getClientOffset() as XYCoord;
 
             const hoveredBoundingRect = ref.current.getBoundingClientRect();
@@ -75,4 +76,3 @@ const useTaskDragAndDrop = <T extends HTMLElement>({ task, index, handleDropHove
 };
 
 export default useTaskDragAndDrop;
-
