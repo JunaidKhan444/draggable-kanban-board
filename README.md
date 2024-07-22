@@ -7,7 +7,6 @@ The Kanban Board 📌 is a dynamic task management tool providing a visual journ
 - Drag-and-drop tasks seamlessly.
 - Create, edit, and delete tasks effortlessly.
 - Detailed task view for better insights.
-- Responsive design for optimal viewing across devices.
 - Light and Dark Mode for a personalized experience.
 
 ## Installation 🛠️
